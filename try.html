@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    pdhddh
+    <script>
+        function processArray(arr) {
+            // Create a new array to store the processed values
+            const processedArray = [];
+
+            // Iterate through each number in the input array
+            for (const num of arr) {
+                if (num % 2 === 0) {
+                    // If the number is even, square it
+                    processedArray.push(num ** 2);
+                } else {
+                    // If the number is odd, triple it
+                    processedArray.push(num * 3);
+                }
+            }
+
+            return processedArray;
+        }
+
+        // Task 2: formatArrayStrings function
+        function formatArrayStrings(strings, processedNumbers) {
+            // Create a new array to store the modified strings
+            const formattedStrings = [];
+
+            // Iterate through each string and its corresponding processed number
+            for (let i = 0; i < strings.length; i++) {
+                const str = strings[i];
+                const processedNum = processedNumbers[i];
+
+                if (processedNum % 2 === 0) {
+                    // If the number is even, capitalize the entire string
+                    formattedStrings.push(str.toUpperCase());
+                } else {
+                    // If the number is odd, convert the string to lowercase
+                    formattedStrings.push(str.toLowerCase());
+                }
+            }
+
+            return formattedStrings;
+        }
+
+        // Example usage:
+        const inputNumbers = [1, 2, 3, 4, 5];
+        const inputStrings = ["apple", "banana", "cherry", "date", "elderberry"];
+
+        const processedNumbers = processArray(inputNumbers);
+        const formattedStrings = formatArrayStrings(inputStrings, processedNumbers);
+
+        console.log("Processed numbers:", processedNumbers);
+        console.log("Formatted strings:", formattedStrings);
+
+    </script>
+</body>
+</html>
